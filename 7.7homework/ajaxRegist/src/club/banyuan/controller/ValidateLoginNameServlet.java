@@ -13,19 +13,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ValidateLoginNameServlet")
+@WebServlet(name = "ValidateLoginNameServlet",urlPatterns = "/loginName.do")
 public class ValidateLoginNameServlet extends HttpServlet {
 
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
     String result = "true";
-    String loginName = request.getParameter("loginName");
+    String flag = request.getParameter("loginName");
+    System.out.println(flag);
     try {
       Connection connection = JdbcUtils.getConnection();
       String url = "select count(*) from user where loginName = ?";
       PreparedStatement preparedStatement = connection.prepareStatement(url);
-      String flag = request.getParameter("loginName");
       preparedStatement.setString(1,flag);
       ResultSet resultSet = preparedStatement.executeQuery();
       if(resultSet.next()){
