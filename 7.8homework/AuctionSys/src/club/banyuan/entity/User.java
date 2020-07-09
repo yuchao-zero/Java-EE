@@ -4,15 +4,15 @@ public class User {
     private Integer id;
     private String userName;
     private String password;
-    private Integer idOfNumber;
-    private Integer telNumber;
+    private Long idOfNumber;
+    private Long telNumber;
     private String address;
     private Integer postalCode;
 
     public User(){}
 
-    public User(Integer id, String userName, String password, Integer idOfNumber,
-        Integer telNumber, String address, Integer postalCode) {
+    public User(Integer id, String userName, String password, Long idOfNumber,
+        Long telNumber, String address, Integer postalCode) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -46,19 +46,19 @@ public class User {
         this.password = password;
     }
 
-    public Integer getIdOfNumber() {
+    public Long getIdOfNumber() {
         return idOfNumber;
     }
 
-    public void setIdOfNumber(Integer idOfNumber) {
+    public void setIdOfNumber(Long idOfNumber) {
         this.idOfNumber = idOfNumber;
     }
 
-    public Integer getTelNumber() {
+    public Long getTelNumber() {
         return telNumber;
     }
 
-    public void setTelNumber(Integer telNumber) {
+    public void setTelNumber(Long telNumber) {
         this.telNumber = telNumber;
     }
 

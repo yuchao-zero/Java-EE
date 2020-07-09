@@ -17,21 +17,32 @@ public class RegistServlet extends HttpServlet {
 
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    request.setCharacterEncoding("utf-8");
     User user = new User();
-    user.setLoginName(request.getParameter("loginName"));
-//        user.setUserName(request.getParameter("userName"));
+    user.setUserName(request.getParameter("userName"));
     user.setPassword(request.getParameter("password"));
-//        user.setSex(Integer.valueOf(request.getParameter("sex")));
-//        user.setEmail(request.getParameter("email"));
-//        user.setMobile(request.getParameter("mobile"));
+    System.out.println(request.getParameter("idOfNumber"));
+//    if(request.getParameter("idOfNumber") == null) {
+//      user.setIdOfNumber(null);
+//    }else{
+    user.setIdOfNumber(Long.parseLong(request.getParameter("idOfNumber")));
+//    }
+//    if(request.getParameter("telNumber") == null) {
+//      user.setTelNumber(null);
+//    }else{
+    user.setTelNumber(Long.parseLong(request.getParameter("telNumber")));
+//    }
+
     try {
       UserDao userDao = new UserDaoImpl(JdbcUtils.getConnection());
       int id = userDao.add(user);
       if (id > 0) {
-        response.sendRedirect("login.html");
+//        重定向要二次请求,会产生很多null,要命的Bug
+//        response.sendRedirect("竞拍者登录.html");
+        request.getRequestDispatcher("竞拍者登录.html").forward(request, response);
         return;
       }
-      response.sendRedirect("regist.html");
+      response.sendRedirect("竞拍者注册页.html");
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     }
