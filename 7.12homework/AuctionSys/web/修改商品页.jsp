@@ -1,0 +1,101 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: edz
+  Date: 2020/7/12
+  Time: 20:42
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>管理员修改商品</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="wrap">
+    <!-- main begin-->
+    <div class="sale">
+        <h1 class="lf">在线拍卖系统</h1>
+        <div class="logout right"><a href="#" title="注销">注销</a></div>
+    </div>
+    <div class="login logns produce">
+        <%
+            String id = request.getParameter("id");
+            System.out.println("jsp页面ID值: " + id);
+        %>
+        <h1 class="blues">拍卖品信息</h1>
+        <form id="formId1" method="post">
+            <dl>
+                <input type="hidden" name="id" value="<%=id%>">
+                <dd>
+                    <label>名称：</label>
+                    <input type="text" class="inputh lf" name="itemName" value="名称"/>
+                    <div class="xzkbg spbg lf"></div>
+                </dd>
+                <dd>
+                    <label>起拍价：</label>
+                    <input type="text" class="inputh lf" name="startPrice" value="4000"/>
+                    <div class="lf red laba">必须为数字</div>
+                </dd>
+                <dd>
+                    <label>底价：</label>
+                    <input type="text" class="inputh lf" name="basePrice" value="5000"/>
+                    <div class="lf red laba">必须为数字</div>
+                </dd>
+                <dd>
+                    <label>开始时间：</label>
+                    <input type="text" class="inputh lf" name="startTime" value="2010-01-05 12:30:00"/>
+                    <div class="lf red laba">格式：2011-05-05 12:30:00</div>
+                </dd>
+                <dd>
+                    <label>结束时间：</label>
+                    <input type="text" class="inputh lf" name="endTime" value="2010-05-06 12:30:00"/>
+                    <div class="lf red laba">格式：2011-05-05 12:30:00</div>
+                </dd>
+                <dd class="dds">
+                    <label>描述：</label>
+                    <textarea name="description" cols="" rows="" class="textarea">嘿嘿</textarea>
+                </dd>
+                <dd>
+                    <label>修改图片：</label>
+                    <div class="lf salebd"><a href="#"><img src="images/ad20.jpg" width="100"
+                                                            height="100"/></a></div>
+                    <input name="" type="file" class="marg10"/>
+                </dd>
+                <dd class="hegas">
+                    <input id="but1" name="" type="submit" value="保 存" class="spbg buttombg buttombgs f14 lf buttomb"/>
+                    <input id="but2" name="cancel" type="submit" value="取 消"
+                           class="spbg buttombg buttombgs f14 lf buttomb"/>
+
+                </dd>
+            </dl>
+        </form>
+        <script>
+          document.getElementById('but1').onclick=function(){
+            document.getElementById('formId1').setAttribute("action","modify.do");
+            // document.getElementById('formId1').action = "mofigy.do?id=&lt;%=id%>"
+          }
+
+          document.getElementById('but2').onclick=function(){
+            document.getElementById('formId1').removeAttribute("action","modify.do")
+            document.getElementById('formId1').setAttribute("action","cancel.do");
+            return confirm("取消修改商品吗?请确认");
+          }
+
+        </script>
+    </div>
+    <!-- main end-->
+    <!-- footer begin-->
+
+</div>
+<!--footer end-->
+
+</div>
+</body>
+</html>
+
