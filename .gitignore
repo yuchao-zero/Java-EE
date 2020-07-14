@@ -14,3 +14,4 @@
 !*.jpg
 !*.jsp
 !.gitignore
+!*.xml

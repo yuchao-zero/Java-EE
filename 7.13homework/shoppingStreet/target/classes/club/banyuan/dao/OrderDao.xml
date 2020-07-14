@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.banyuan.dao.OrderDao">
+    <resultMap id="orderMap" type="Order">
+        <id column="id" property="id"/>
+        <result column="userId" property="userId"/>
+        <result column="userAddress" property="userAddress"/>
+        <result column="createTime" property="createTime"/>
+        <result column="cost" property="cost"/>
+        <collection property="orderDetailList" ofType="OrderDetail">
+            <id column="detailId" property="id"/>
+            <result column="orderId" property="orderId"/>
+            <result column="productId" property="productId"/>
+            <result column="quantity" property="quantity"/>
+            <result column="detailCost" property="cost"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="orderMap2" type="Order">
+        <id column="id" property="id"/>
+        <result column="userId" property="userId"/>
+        <result column="userAddress" property="userAddress"/>
+        <result column="createTime" property="createTime"/>
+        <result column="cost" property="cost"/>
+        <collection property="productList" ofType="Product">
+            <id column="pid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="price" property="price"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultType="OrderAndUser">
+        select o.*,u.loginName,u.userName,u.sex from shoppingstreet.USER u,shoppingstreet.order o
+        where u.id = o.userId
+    </select>
+
+    <select id="findOrderAndDetailById" parameterType="int" resultMap="orderMap">
+        select o.* , detail.id as detailId,detail.orderId,detail.productId,
+         detail.quantity,detail.cost as detailCost from shoppingstreet.order o,order_detail detail
+        where o.id = detail.orderId and o.id=#{id}
+    </select>
+
+    <select id="findOrderAndProductById" parameterType="int" resultMap="orderMap2">
+        select product.id as pid ,product.name,product.price,
+         o.*
+         from shoppingstreet.order o ,
+                    order_detail detail,
+                    product
+        where o.id = detail.orderId and
+                product.id = detail.productId
+                and o.id = #{id}
+    </select>
+</mapper>

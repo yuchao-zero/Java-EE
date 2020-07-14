@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb5282f4-0935-4a50-a64a-c1857123f9bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/AuctionSys/src/club/banyuan/controller/RegistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuctionSys/src/club/banyuan/controller/RegistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuctionSys/src/club/banyuan/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuctionSys/src/club/banyuan/entity/User.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1eQbIDPOJXLaLVV8G2ILAr7PBGW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb5282f4-0935-4a50-a64a-c1857123f9bf" name="Default Changelist" comment="" />
+      <created>1594256681954</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594256681954</updated>
+      <workItem from="1594256689558" duration="203000" />
+    </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1594256847428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594256847428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="23" key="CommitChangelistDialog2" timestamp="1594256846406">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="0" y="23" key="CommitChangelistDialog2/0.23.1440.806@0.23.1440.806" timestamp="1594256846406" />
+    <state x="328" y="171" key="Vcs.Push.Dialog.v2" timestamp="1594256853871">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="328" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.806@0.23.1440.806" timestamp="1594256853871" />
+  </component>
+</project>

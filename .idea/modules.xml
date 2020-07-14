@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/7.2homework/7.2homework.iml" filepath="$PROJECT_DIR$/7.2homework/7.2homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.7homework/7.7homework.iml" filepath="$PROJECT_DIR$/7.7homework/7.7homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.8homework/7.8homework.iml" filepath="$PROJECT_DIR$/7.8homework/7.8homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-EE.iml" filepath="$PROJECT_DIR$/.idea/Java-EE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVCWeb/MVCWeb.iml" filepath="$PROJECT_DIR$/MVCWeb/MVCWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.3homework/MVCWeb/MVCWeb1.iml" filepath="$PROJECT_DIR$/7.3homework/MVCWeb/MVCWeb1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.3homework/MVCWebHomework/MVCWebHomework.iml" filepath="$PROJECT_DIR$/7.3homework/MVCWebHomework/MVCWebHomework.iml" />
+    </modules>
+  </component>
+</project>
