@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.banyuan.dao.AdminDao">
+  <!--  id 标签:用于指定主键字段-->
+  <!--  result 标签:用于指定非主键字段-->
+  <!--  column 属性:用于指定数据库列名-->
+  <!--  property 属性:用于指定实体类属性名称-->
+  <resultMap id="adminMap" type="club.banyuan.entity.Admin">
+    <id column="id" property="id"/>
+    <result column="userName" property="userName"/>
+    <result column="password" property="password"/>
+  </resultMap>
+
+  <select id="getLoginUser" parameterType="club.banyuan.entity.Admin"
+    resultMap="adminMap">
+    select * from admin where userName = #{userName} and password = #{password}
+  </select>
+</mapper>
