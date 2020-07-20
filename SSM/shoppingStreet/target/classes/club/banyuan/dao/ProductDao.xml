@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.banyuan.dao.ProductDao">
+  <resultMap id="productMap" type="Product">
+    <id column="id" property="id"/>
+    <result column="name" property="name"/>
+    <result column="price" property="price"/>
+    <collection property="orderList" ofType="Order">
+      <id column="oid" property="id"/>
+      <result column="userId" property="userId"/>
+      <result column="userAddress" property="userAddress"/>
+      <result column="createTime" property="createTime"/>
+      <result column="cost" property="cost"/>
+    </collection>
+  </resultMap>
+
+  <select id="getProductAndOrder" parameterType="int" resultMap="productMap">
+        select product.id ,product.name,product.price,
+         o.id as oid ,o.createTime,o.cost
+         from shoppingstreet.order o ,
+                    order_detail detail,
+                    product
+        where o.id = detail.orderId and
+                product.id = detail.productId
+                and product.id = #{id}
+    </select>
+
+  <select id="getProductById" parameterType="int" resultType="Product">
+    select * from product where id = #{id}
+  </select>
+</mapper>

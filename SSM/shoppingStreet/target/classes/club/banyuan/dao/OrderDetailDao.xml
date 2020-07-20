@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.banyuan.dao.OrderDetailDao">
+    <resultMap id="orderDetailMap" type="OrderDetail">
+        <id column="id" property="id"/>
+        <result column="orderId" property="orderId"/>
+        <result column="productId" property="productId"/>
+        <result column="quantity" property="quantity"/>
+        <result column="cost" property="cost"/>
+        <association property="order" javaType="Order">
+            <id column="id" property="id"/>
+            <result column="userId" property="userId"/>
+            <result column="userAddress" property="userAddress"/>
+            <result column="createTime" property="createTime"/>
+            <result column="orderCost" property="cost"/>
+        </association>
+    </resultMap>
+    <select id="getOrderDetailByOrderId" parameterType="int" resultMap="orderDetailMap">
+        select detail.* , o.cost as orderCost from shoppingstreet.order o,order_detail detail
+        where o.id = detail.orderId and o.id=#{id}
+    </select>
+</mapper>
